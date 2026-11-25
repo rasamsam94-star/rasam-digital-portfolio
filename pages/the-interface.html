@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07080d">
+  <meta name="description" content="Inside the making of RASAM Universe — a front-end development case study exploring HTML structure, CSS atmosphere, and JavaScript interaction.">
+  <title>The Interface — Building RASAM Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="the-interface.css">
+  <script src="the-interface.js" defer></script>
+</head>
+<body class="ti-page">
+  <div class="ti-atmosphere" aria-hidden="true">
+    <canvas id="ti-starfield"></canvas>
+    <div class="ti-nebula ti-nebula-a"></div>
+    <div class="ti-nebula ti-nebula-b"></div>
+    <div class="ti-vignette"></div>
+  </div>
+
+  <header class="ti-nav">
+    <a class="ti-logo" href="../index.html">RASAM<span>✧</span></a>
+    <div class="ti-nav-meta"><span>THE INTERFACE / 2026</span><a href="../index.html#interface">BACK TO THE UNIVERSE <b>↗</b></a></div>
+  </header>
+
+  <main class="ti-main" id="top">
+    <!-- 01 / Opening -->
+    <section class="ti-hero ti-reveal">
+      <div class="ti-hero-copy">
+        <p class="ti-eyebrow"><i></i> A FRONT-END DEVELOPMENT CASE STUDY</p>
+        <p class="ti-index">FIELD NOTES / 001 — RASAM UNIVERSE</p>
+        <h1>A universe<br>built through <em>code.</em></h1>
+        <p class="ti-lead">Behind every visual experience is a system of structure, style, and logic. This is the story of how RASAM moves from a designed idea into an interactive digital universe.</p>
+        <a class="ti-button" href="#architecture">ENTER THE BUILD <span>↓</span></a>
+      </div>
+      <div class="ti-hero-art" aria-hidden="true">
+        <div class="ti-hero-orbit orbit-one"></div><div class="ti-hero-orbit orbit-two"></div><div class="ti-hero-orbit orbit-three"></div>
+        <div class="ti-hero-core"><span>R</span><small>UNIVERSE / 001</small></div>
+        <i class="ti-hero-star star-one"></i><i class="ti-hero-star star-two"></i><i class="ti-hero-star star-three"></i>
+      </div>
+      <div class="ti-hero-foot"><span>HTML · CSS · JAVASCRIPT</span><span>SCROLL TO EXPLORE ↓</span></div>
+    </section>
+
+    <!-- 02 / Architecture -->
+    <section class="ti-section ti-architecture" id="architecture">
+      <div class="ti-section-head ti-reveal">
+        <p class="ti-eyebrow">02 / THE ARCHITECTURE</p>
+        <h2>Before the universe<br>could move, it needed a <em>structure.</em></h2>
+        <p>HTML defines the experience's foundation: the page regions, navigation, chapter destinations, and the elements JavaScript can bring to life.</p>
+      </div>
+      <div class="ti-architecture-grid">
+        <div class="ti-code-card ti-reveal">
+          <div class="ti-code-top"><span><i></i><i></i><i></i></span><b>index.html</b><small>STRUCTURE / 001</small></div>
+          <pre><code><span class="code-comment">&lt;!-- Global galaxy stage --&gt;</span>
+<span class="code-tag">&lt;canvas</span> <span class="code-attr">id</span>=<span class="code-string">"starfield"</span><span class="code-tag">&gt;&lt;/canvas&gt;</span>
+
+<span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"galaxy-stage"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"galaxy-layer galaxy-layer-a"</span><span class="code-tag">&gt;&lt;/div&gt;</span>
+  <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"galaxy-layer galaxy-layer-b"</span><span class="code-tag">&gt;&lt;/div&gt;</span>
+  <span class="code-comment">&lt;!-- additional atmosphere layers --&gt;</span>
+<span class="code-tag">&lt;/div&gt;</span>
+
+<span class="code-tag">&lt;header</span> <span class="code-attr">class</span>=<span class="code-string">"site-header"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;button</span> <span class="code-attr">id</span>=<span class="code-string">"openUniverse"</span><span class="code-tag">&gt;</span>
+    Explore Universe
+  <span class="code-tag">&lt;/button&gt;</span>
+<span class="code-tag">&lt;/header&gt;</span></code></pre>
+          <div class="ti-code-caption">A real excerpt from the RASAM Universe page structure</div>
+        </div>
+        <div class="ti-architecture-copy ti-reveal">
+          <span class="ti-big-number">01</span>
+          <p class="ti-kicker">SEMANTIC STRUCTURE</p>
+          <h3>Every element<br>has a <em>place.</em></h3>
+          <p>The document brings together the starfield canvas, layered galaxy stage, navigation, content sections, and interactive controls. Clear IDs and class names create reliable connection points for styling and behavior.</p>
+          <div class="ti-spec-list"><span>PAGE STRUCTURE</span><span>INTERACTIVE ELEMENTS</span><span>CHAPTER DESTINATIONS</span></div>
+        </div>
+      </div>
+
+      <div class="ti-evidence-block ti-reveal">
+        <div class="ti-evidence-heading"><span>BUILD EVIDENCE / HTML</span><p>Actual development captures from the RASAM source files</p></div>
+        <div class="ti-code-evidence-grid two-up">
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/01-html-global-structure.png" aria-label="Open evidence preview: VS Code screenshot showing RASAM HTML global galaxy stage and navigation structure">
+            <img src="../assets/interface/code-evidence/01-html-global-structure.png" alt="VS Code screenshot showing RASAM HTML global galaxy stage and navigation structure" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-01 / GLOBAL STRUCTURE</b><span>Canvas, galaxy layers, and navigation anchors</span></figcaption></figure>
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/02-html-hero-and-page-sections.png" aria-label="Open evidence preview: VS Code screenshot showing RASAM HTML hero section and page content structure">
+            <img src="../assets/interface/code-evidence/02-html-hero-and-page-sections.png" alt="VS Code screenshot showing RASAM HTML hero section and page content structure" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-02 / PAGE COMPOSITION</b><span>Semantic hero content and interactive entry point</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / CSS visual engine -->
+    <section class="ti-section ti-visual-engine" id="visual-engine">
+      <div class="ti-section-head ti-reveal">
+        <p class="ti-eyebrow">03 / THE VISUAL ENGINE</p>
+        <h2>Code gives the cosmos<br>its <em>atmosphere.</em></h2>
+        <p>CSS shapes the visual system: fixed atmospheric layers, depth, color, typography, and the visual hierarchy that keeps the experience readable.</p>
+      </div>
+      <div class="ti-css-stage ti-reveal">
+        <div class="ti-css-preview">
+          <div class="ti-preview-label">LAYERED ENVIRONMENT / LIVE CONCEPT</div>
+          <div class="ti-preview-halo"></div><div class="ti-preview-ring ring-a"></div><div class="ti-preview-ring ring-b"></div><div class="ti-preview-ring ring-c"></div>
+          <div class="ti-preview-point"></div>
+          <span class="ti-preview-coordinate coordinate-a">ATMOSPHERE / 01</span><span class="ti-preview-coordinate coordinate-b">DEPTH / 02</span>
+        </div>
+        <div class="ti-css-code">
+          <div class="ti-code-top"><span><i></i><i></i><i></i></span><b>style.css</b><small>VISUAL SYSTEM / 002</small></div>
+          <pre><code><span class="code-comment">/* Starfield background */</span>
+<span class="code-selector">#starfield</span> {
+  <span class="code-property">position</span>: <span class="code-value">fixed</span>;
+  <span class="code-property">inset</span>: <span class="code-value">0</span>;
+  <span class="code-property">width</span>: <span class="code-value">100%</span>;
+  <span class="code-property">height</span>: <span class="code-value">100%</span>;
+  <span class="code-property">pointer-events</span>: <span class="code-value">none</span>;
+  <span class="code-property">z-index</span>: <span class="code-value">0</span>;
+}
+
+<span class="code-comment">/* Global galaxy stage */</span>
+<span class="code-selector">.galaxy-stage</span> {
+  <span class="code-property">position</span>: <span class="code-value">fixed</span>;
+  <span class="code-property">inset</span>: <span class="code-value">0</span>;
+  <span class="code-property">overflow</span>: <span class="code-value">hidden</span>;
+  <span class="code-property">pointer-events</span>: <span class="code-value">none</span>;
+  <span class="code-property">isolation</span>: <span class="code-value">isolate</span>;
+}</code></pre>
+          <div class="ti-code-caption">Selected rules from the existing RASAM stylesheet</div>
+        </div>
+      </div>
+      <div class="ti-principles ti-reveal"><div><b>01</b><span>DEPTH</span><p>Layered backgrounds establish a sense of space.</p></div><div><b>02</b><span>HIERARCHY</span><p>Typography and contrast guide the visitor.</p></div><div><b>03</b><span>ATMOSPHERE</span><p>Color and light support each chapter's identity.</p></div></div>
+
+      <div class="ti-evidence-block ti-reveal">
+        <div class="ti-evidence-heading"><span>BUILD EVIDENCE / CSS</span><p>How the visual foundation and cosmic environment are styled</p></div>
+        <div class="ti-code-evidence-grid two-up">
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/03-css-design-foundation.png" aria-label="Open evidence preview: VS Code screenshot showing RASAM CSS variables, typography, and design foundation">
+            <img src="../assets/interface/code-evidence/03-css-design-foundation.png" alt="VS Code screenshot showing RASAM CSS variables, typography, and design foundation" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-03 / DESIGN FOUNDATION</b><span>Color tokens, typography, and global reset</span></figcaption></figure>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / JavaScript engine -->
+    <section class="ti-section ti-js-engine" id="engine">
+      <div class="ti-section-head ti-reveal">
+        <p class="ti-eyebrow">04 / THE INTELLIGENCE OF MOTION</p>
+        <h2>Then the universe<br>began to <em>respond.</em></h2>
+        <p>JavaScript connects the visual layers to behavior — animating the stars, drawing constellation connections, blending cosmic palettes, and controlling navigation.</p>
+      </div>
+      <div class="ti-engine-layout">
+        <div class="ti-engine-copy ti-reveal">
+          <div class="ti-engine-mark">JS<span>{ }</span></div>
+          <h3>From static elements<br>to living systems.</h3>
+          <p>The starfield is rendered on a canvas. Each animation frame clears the drawing surface, updates the palette, draws constellation connections, and advances the stars' twinkle and movement.</p>
+          <div class="ti-engine-stats"><div><strong>12</strong><span>CHAPTER PALETTES</span></div><div><strong>01</strong><span>CANVAS ENGINE</span></div><div><strong>∞</strong><span>GENERATED FRAMES</span></div></div>
+        </div>
+        <div class="ti-code-card ti-js-code ti-reveal">
+          <div class="ti-code-top"><span><i></i><i></i><i></i></span><b>script.js</b><small>ANIMATION LOOP / 003</small></div>
+          <pre><code><span class="code-keyword">function</span> <span class="code-function">animateStars</span>() {
+  ctx.<span class="code-function">clearRect</span>(<span class="code-value">0</span>, <span class="code-value">0</span>, width, height);
+  <span class="code-function">updateCosmicPalette</span>();
+  <span class="code-function">drawConstellations</span>();
+
+  stars.<span class="code-function">forEach</span>(star =&gt; {
+    star.twinklePhase += star.twinkleSpeed;
+    <span class="code-comment">// update glow and movement</span>
+    star.y -= star.speed;
+  });
+
+  <span class="code-function">requestAnimationFrame</span>(animateStars);
+}</code></pre>
+          <div class="ti-code-caption">Excerpt from the animation loop in script.js</div>
+        </div>
+      </div>
+      <div class="ti-flow ti-reveal"><span>CANVAS</span><i>→</i><span>UPDATE PALETTE</span><i>→</i><span>DRAW CONNECTIONS</span><i>→</i><span>ANIMATE STARS</span><i>↻</i></div>
+
+      <div class="ti-evidence-block ti-reveal">
+        <div class="ti-evidence-heading"><span>BUILD EVIDENCE / JAVASCRIPT</span><p>Selected source captures documenting the behavior behind the universe</p></div>
+        <div class="ti-code-evidence-grid">
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/05-js-cosmic-palette-system.png" aria-label="Open evidence preview: VS Code screenshot showing JavaScript cosmic palette definitions for the twelve chapters">
+            <img src="../assets/interface/code-evidence/05-js-cosmic-palette-system.png" alt="VS Code screenshot showing JavaScript cosmic palette definitions for the twelve chapters" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-05 / COSMIC PALETTE SYSTEM</b><span>Chapter-specific star and connection colors</span></figcaption></figure>
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/06-js-constellation-connections.png" aria-label="Open evidence preview: VS Code screenshot showing JavaScript constellation connection drawing logic">
+            <img src="../assets/interface/code-evidence/06-js-constellation-connections.png" alt="VS Code screenshot showing JavaScript constellation connection drawing logic" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-06 / CONSTELLATION LOGIC</b><span>Distance-based connections between stars</span></figcaption></figure>
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/07-js-animation-and-palette-blending.png" aria-label="Open evidence preview: VS Code screenshot showing JavaScript animation loop and smooth palette blending">
+            <img src="../assets/interface/code-evidence/07-js-animation-and-palette-blending.png" alt="VS Code screenshot showing JavaScript animation loop and smooth palette blending" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-07 / ANIMATION ENGINE</b><span>Palette blending, star twinkle, and movement</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 / Interaction video -->
+    <section class="ti-section ti-interaction" id="interaction">
+      <div class="ti-section-head ti-reveal">
+        <p class="ti-eyebrow">05 / INTERACTION IN MOTION</p>
+        <h2>Not just a universe<br>to look at. A universe<br>to <em>explore.</em></h2>
+        <p>The build comes together when structure, visuals, and behavior meet. This recording captures the experience moving through its navigation and chapter destinations.</p>
+      </div>
+      <div class="ti-video-shell ti-reveal">
+        <div class="ti-video-top"><span><i></i> RASAM / INTERACTION RECORDING</span><span>DEMO 001 · 01:25</span></div>
+        <video controls playsinline preload="metadata" poster="" aria-label="RASAM Universe interaction recording">
+          <source src="../assets/interface/rasam-interaction-journey.mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+        <div class="ti-video-caption"><span>FIELD RECORDING / COSMIC NAVIGATION</span><span>HTML · CSS · JAVASCRIPT</span></div>
+      </div>
+      <div class="ti-interaction-grid ti-reveal">
+        <article><span>01 / NAVIGATION</span><h3>Cosmic Navigation</h3><p>The Universe Directory opens as an overlay and provides routes to the portfolio's destinations.</p></article>
+        <article><span>02 / VISUAL RESPONSE</span><h3>Dynamic Constellation</h3><p>The JavaScript palette system defines chapter-specific star and connection colors, blended as the active chapter changes.</p></article>
+        <article><span>03 / CONTENT STATE</span><h3>Capability Explorer</h3><p>Interactive selections update the capability details, connecting the visitor's choice to the relevant content.</p></article>
+      </div>
+      <p class="ti-evidence-note">The recording demonstrates the navigation journey. The palette engine and capability explorer are additionally documented through the source implementation.</p>
+
+      <div class="ti-evidence-block ti-reveal">
+        <div class="ti-evidence-heading"><span>BUILD EVIDENCE / INTERACTION LOGIC</span><p>The code behind the navigation and capability controls</p></div>
+        <div class="ti-code-evidence-grid two-up">
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/08-js-cosmic-navigation.png" aria-label="Open evidence preview: VS Code screenshot showing JavaScript Universe Directory open and close navigation logic">
+            <img src="../assets/interface/code-evidence/08-js-cosmic-navigation.png" alt="VS Code screenshot showing JavaScript Universe Directory open and close navigation logic" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-08 / COSMIC NAVIGATION</b><span>Opening, closing, and routing between destinations</span></figcaption></figure>
+          <figure><button class="ti-image-button" type="button" data-lightbox="assets/interface/code-evidence/09-js-capability-explorer.png" aria-label="Open evidence preview: VS Code screenshot showing JavaScript interactive capability explorer data and controls">
+            <img src="../assets/interface/code-evidence/09-js-capability-explorer.png" alt="VS Code screenshot showing JavaScript interactive capability explorer data and controls" loading="lazy">
+            <span class="ti-image-open" aria-hidden="true">↗</span>
+          </button><figcaption><b>TI-09 / CAPABILITY EXPLORER</b><span>Interactive capability data and selected content state</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 / Closing -->
+    <section class="ti-closing" id="closing">
+      <div class="ti-closing-orbit" aria-hidden="true"><span></span><i></i><b></b></div>
+      <div class="ti-closing-copy ti-reveal">
+        <p class="ti-eyebrow">06 / BEYOND THE CODE</p>
+        <h2>The interface<br>is only the <em>beginning.</em></h2>
+        <p>RASAM Universe is an ongoing exploration of how design, technology, and creativity can work as one — turning a collection of pages into a connected digital experience.</p>
+        <a class="ti-button" href="../index.html#interface">RETURN TO THE UNIVERSE <span>↗</span></a>
+      </div>
+      <footer class="ti-footer"><a href="../index.html">RASAM<span>✧</span></a><span>THE INTERFACE · FRONT-END DEVELOPMENT · 2026</span><a href="#top">BACK TO THE BEGINNING ↑</a></footer>
+    </section>
+  </main>
+
+  <div class="ti-lightbox" id="evidence-lightbox" aria-hidden="true" role="dialog" aria-label="Evidence image viewer">
+    <button class="ti-lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <img src="" alt="" />
+  </div>
+</body>
+</html>

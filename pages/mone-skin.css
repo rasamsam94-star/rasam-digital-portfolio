@@ -1,0 +1,924 @@
+
+/* =========================================================
+   MONÉ SKIN — LIGHT CELESTIAL LUXURY
+   RASAM DIGITAL PORTFOLIO
+   Desktop-first foundation
+========================================================= */
+
+/* 01. DESIGN TOKENS
+========================================================= */
+
+:root {
+  --mone-ivory: #f7f3ec;
+  --mone-cream: #eee6da;
+  --mone-beige: #ded0bd;
+  --mone-champagne: #c9a978;
+  --mone-gold: #b9945c;
+  --mone-cocoa: #49382f;
+  --mone-deep: #30241f;
+  --mone-muted: #88796d;
+  --mone-white: #fffdf9;
+
+  --mone-serif: "Cormorant Garamond", Georgia, serif;
+  --mone-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --mone-content-width: 1280px;
+  --mone-side-padding: clamp(28px, 7vw, 110px);
+
+  --mone-transition: 700ms cubic-bezier(.2, .7, .2, 1);
+}
+
+/* 02. BASE
+========================================================= */
+
+.mone-page {
+  margin: 0;
+  padding: 0;
+  color: var(--mone-cocoa);
+  background: var(--mone-ivory);
+  font-family: var(--mone-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mone-page *,
+.mone-page *::before,
+.mone-page *::after {
+  box-sizing: border-box;
+}
+
+.mone-page img {
+  display: block;
+  max-width: 100%;
+}
+
+.mone-page figure {
+  margin: 0;
+}
+
+.mone-case-study {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mone-chapter {
+  position: relative;
+  z-index: 1;
+  padding: 150px var(--mone-side-padding);
+  overflow: hidden;
+}
+
+.mone-chapter > * {
+  position: relative;
+  z-index: 2;
+}
+
+.mone-chapter-intro,
+.mone-hero-content,
+.mone-closing-content {
+  width: min(100%, var(--mone-content-width));
+  margin-inline: auto;
+}
+
+
+
+/* 02A. PORTFOLIO NAVIGATION — RASAM MASTER HEADER
+========================================================= */
+
+.mone-page-nav {
+  position: absolute;
+  z-index: 20;
+  top: 34px;
+  left: var(--mone-side-padding);
+  right: var(--mone-side-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.mone-brand-link,
+.mone-nav-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 250ms ease, opacity 250ms ease;
+}
+
+.mone-brand-link {
+  gap: 5px;
+  color: var(--mone-deep);
+  font-family: var(--mone-serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: .015em;
+  line-height: 1;
+}
+
+.mone-brand-link span {
+  color: var(--mone-gold);
+  font-family: var(--mone-sans);
+  font-size: 18px;
+}
+
+.mone-nav-link {
+  gap: 9px;
+  color: var(--mone-gold);
+  font-family: var(--mone-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+  line-height: 1.4;
+}
+
+.mone-nav-link span {
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.mone-brand-link:hover,
+.mone-nav-link:hover {
+  color: var(--mone-champagne);
+}
+
+.mone-closing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 38px;
+  margin-top: 52px;
+}
+
+.mone-closing .mone-action-link {
+  color: var(--mone-ivory);
+}
+
+.mone-closing .mone-action-link:hover {
+  color: var(--mone-champagne);
+}
+
+.mone-action-primary {
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(201, 169, 120, .65);
+}
+
+@media (max-width: 600px) {
+  .mone-page-nav {
+    top: 25px;
+    left: 22px;
+    right: 22px;
+    gap: 12px;
+  }
+
+  .mone-brand-link {
+    font-size: 19px;
+  }
+
+  .mone-nav-link {
+    gap: 6px;
+    font-size: 8px;
+    letter-spacing: .12em;
+  }
+
+  .mone-nav-link span {
+    font-size: 13px;
+  }
+
+  .mone-closing-actions {
+    gap: 24px;
+    margin-top: 42px;
+  }
+}
+
+
+/* 03. TYPOGRAPHY
+========================================================= */
+
+.mone-page h1,
+.mone-page h2,
+.mone-page h3 {
+  margin: 0;
+  font-family: var(--mone-serif);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.mone-page h1 {
+  font-size: clamp(76px, 11vw, 158px);
+  line-height: .88;
+}
+
+.mone-page h2 {
+  font-size: clamp(54px, 7vw, 94px);
+  line-height: .98;
+}
+
+.mone-page h3 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.mone-page p {
+  font-size: 15px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+.mone-eyebrow {
+  margin: 0 0 28px;
+  color: var(--mone-gold);
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+}
+
+.mone-chapter-label {
+  display: inline-block;
+  margin-top: 42px;
+  color: var(--mone-muted);
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+/* 04. CELESTIAL ATMOSPHERE
+========================================================= */
+
+.mone-case-study::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  pointer-events: none;
+  opacity: .17;
+  background-image:
+    url("../assets/projects/mone-skin/universe/particles/mone-celestial-star-particles.png");
+  background-repeat: repeat;
+  background-size: 620px auto;
+  mix-blend-mode: multiply;
+}
+
+.mone-case-study::after {
+  position: absolute;
+  z-index: 0;
+  top: 850px;
+  right: -250px;
+  width: min(75vw, 1050px);
+  aspect-ratio: 1;
+  content: "";
+  pointer-events: none;
+  opacity: .14;
+  background-image:
+    url("../assets/projects/mone-skin/universe/backgrounds/mone-celestial-nebula-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: multiply;
+}
+
+.mone-chapter::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: .1;
+  background-image:
+    url("../assets/projects/mone-skin/universe/glow/mone-celestial-glow.png");
+  background-position: center;
+  background-size: min(100%, 1100px) auto;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+}
+
+.mone-chapter::after {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: -12%;
+  width: 520px;
+  height: 520px;
+  content: "";
+  pointer-events: none;
+  transform: translateY(-50%);
+  opacity: .12;
+  background-image:
+    url("../assets/projects/mone-skin/universe/orbits/mone-celestial-orbit-elements.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* 05. CHAPTER 01 — HERO
+========================================================= */
+
+.mone-hero {
+  display: flex;
+  min-height: 900px;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 120px;
+  background:
+    radial-gradient(
+      ellipse at 78% 18%,
+      rgba(215, 190, 153, .27),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      var(--mone-ivory),
+      #eee5d8 75%,
+      #e8ddcf
+    );
+}
+
+.mone-hero::before {
+  inset: 0;
+  opacity: .3;
+  background-size: cover;
+  background-position: center;
+}
+
+.mone-hero::after {
+  top: 5%;
+  right: -10%;
+  width: 780px;
+  height: 780px;
+  opacity: .22;
+}
+
+.mone-hero-content {
+  padding: 0 4%;
+}
+
+.mone-hero h1 {
+  max-width: 1000px;
+  color: var(--mone-deep);
+}
+
+.mone-hero-subtitle {
+  max-width: 430px;
+  margin: 35px 0 0;
+  color: var(--mone-muted);
+  font-family: var(--mone-serif);
+  font-size: clamp(21px, 2.2vw, 29px) !important;
+  line-height: 1.45 !important;
+}
+
+.mone-hero .mone-screen {
+  width: min(100%, 1120px);
+  margin: 95px auto 0;
+}
+
+/* 06. SCREENSHOT PRESENTATION
+========================================================= */
+
+.mone-screen {
+  position: relative;
+  width: min(100%, var(--mone-content-width));
+  margin: 75px auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(145, 116, 80, .2);
+  border-radius: 4px;
+  background: var(--mone-white);
+  box-shadow:
+    0 35px 90px rgba(69, 48, 32, .09),
+    0 8px 25px rgba(69, 48, 32, .04);
+}
+
+
+.mone-screen img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 1.2s cubic-bezier(.2, .7, .2, 1);
+}
+
+.mone-screen:hover img {
+  transform: scale(1.012);
+}
+
+/* 07. CHAPTER 02 — BRAND IDENTITY
+========================================================= */
+
+#chapter-02 {
+  padding-top: 190px;
+  padding-bottom: 190px;
+  background:
+    radial-gradient(
+      ellipse at 5% 45%,
+      rgba(218, 195, 165, .3),
+      transparent 40%
+    ),
+    var(--mone-white);
+}
+
+#chapter-02::after {
+  top: 25%;
+  right: -180px;
+  width: 650px;
+  height: 650px;
+  opacity: .16;
+}
+
+#chapter-02 .mone-chapter-intro {
+  max-width: 850px;
+  margin-left: 8%;
+}
+
+#chapter-02 .mone-chapter-intro > p:last-child {
+  max-width: 480px;
+  margin-top: 28px;
+  color: var(--mone-muted);
+}
+
+#chapter-02 .mone-screen + .mone-screen {
+  width: min(100%, 1000px);
+  margin-top: 100px;
+  margin-left: auto;
+}
+
+
+/* =========================================================
+   CHAPTER 03 — EDITORIAL VALUES SHOWCASE
+========================================================= */
+
+#chapter-03.mone-values {
+  position: relative;
+  padding: 170px clamp(40px, 8vw, 130px) 180px;
+  background:
+    radial-gradient(
+      ellipse at 85% 20%,
+      rgba(211, 185, 148, .25),
+      transparent 42%
+    ),
+    linear-gradient(145deg, #f2e9dd, #faf7f1 65%, #eee4d7);
+}
+
+/* Heading */
+
+.mone-values-heading {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mone-values-heading-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.mone-values-heading-top .mone-eyebrow {
+  margin: 0;
+}
+
+.mone-values-index {
+  color: var(--mone-muted);
+  font-size: 11px;
+  letter-spacing: .15em;
+}
+
+.mone-values-heading h2 {
+  max-width: 900px;
+  color: var(--mone-deep);
+  font-size: clamp(66px, 8vw, 112px);
+  line-height: .95;
+}
+
+.mone-values-description {
+  max-width: 580px;
+  margin: 32px 0 0;
+  color: var(--mone-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Three value columns */
+
+.mone-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 55px;
+  max-width: 1100px;
+  margin: 110px auto 0;
+  padding: 42px 0 55px;
+  border-top: 1px solid rgba(185, 148, 92, .4);
+  border-bottom: 1px solid rgba(185, 148, 92, .4);
+}
+
+.mone-value-card {
+  position: relative;
+  padding: 0 18px 0 0;
+}
+
+.mone-value-number {
+  display: block;
+  margin-bottom: 30px;
+  color: var(--mone-gold);
+  font-family: var(--mone-serif);
+  font-size: 25px;
+}
+
+.mone-value-line {
+  width: 42px;
+  height: 1px;
+  margin-bottom: 25px;
+  background: var(--mone-gold);
+  transition: width 600ms ease;
+}
+
+.mone-value-card:hover .mone-value-line {
+  width: 85px;
+}
+
+.mone-value-card h3 {
+  margin-bottom: 20px;
+  color: var(--mone-cocoa);
+  font-size: clamp(29px, 3vw, 39px);
+}
+
+.mone-value-card p {
+  max-width: 310px;
+  margin: 0;
+  color: var(--mone-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* Original website evidence */
+
+.mone-values-evidence {
+  max-width: 1100px;
+  margin: 110px auto 0;
+}
+
+.mone-values-evidence-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--mone-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .18em;
+}
+
+.mone-values-evidence .mone-screen {
+  width: 100%;
+  margin: 25px auto 0;
+  border: 1px solid rgba(145, 116, 80, .2);
+  box-shadow: 0 30px 80px rgba(69, 48, 32, .1);
+}
+
+/* Chapter 03 responsive foundation */
+
+@media (max-width: 900px) {
+  #chapter-03.mone-values {
+    padding: 120px 6%;
+  }
+
+  .mone-values-grid {
+    gap: 28px;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  #chapter-03.mone-values {
+    padding: 90px 24px;
+  }
+
+  .mone-values-heading-top {
+    margin-bottom: 35px;
+  }
+
+  .mone-values-heading h2 {
+    font-size: clamp(52px, 13vw, 72px);
+  }
+
+  .mone-values-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    margin-top: 65px;
+    padding: 35px 0;
+  }
+
+  .mone-value-card {
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(185, 148, 92, .2);
+  }
+
+  .mone-values-evidence {
+    margin-top: 75px;
+  }
+
+  .mone-values-evidence-label {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 9px;
+  }
+}
+
+
+/* 09. CHAPTER 04 — SKINCARE RITUALS
+========================================================= */
+
+#chapter-04 {
+  padding-top: 190px;
+  padding-bottom: 190px;
+  background: #f9f6f0;
+}
+
+#chapter-04::before {
+  opacity: .2;
+  background-size: 900px auto;
+  background-position: 80% 40%;
+}
+
+#chapter-04::after {
+  top: 10%;
+  right: auto;
+  left: -220px;
+  width: 650px;
+  height: 650px;
+  opacity: .13;
+}
+
+#chapter-04 .mone-chapter-intro {
+  max-width: 750px;
+  margin-left: 12%;
+}
+
+#chapter-04 .mone-chapter-intro > p:last-child {
+  max-width: 480px;
+  margin-top: 28px;
+  color: var(--mone-muted);
+}
+
+/* 10. CHAPTER 05 — PRODUCT COLLECTION
+========================================================= */
+
+#chapter-05 {
+  background:
+    radial-gradient(
+      ellipse at 85% 50%,
+      rgba(208, 184, 151, .24),
+      transparent 45%
+    ),
+    #eae0d3;
+}
+
+#chapter-05 .mone-chapter-intro {
+  max-width: 850px;
+  text-align: center;
+}
+
+#chapter-05 .mone-chapter-intro > p:last-child {
+  max-width: 520px;
+  margin: 25px auto 0;
+  color: var(--mone-muted);
+}
+
+#chapter-05 .mone-screen {
+  width: min(100%, 1100px);
+  background: var(--mone-white);
+}
+
+/* 11. CHAPTER 06 — DESIGN DECISIONS
+========================================================= */
+
+#chapter-06 {
+  padding-top: 190px;
+  padding-bottom: 190px;
+  background: var(--mone-white);
+}
+
+#chapter-06 .mone-chapter-intro {
+  max-width: 900px;
+  margin-left: 8%;
+}
+
+#chapter-06 .mone-chapter-intro > p:last-child {
+  max-width: 600px;
+  margin-top: 28px;
+  color: var(--mone-muted);
+}
+
+.mone-design-notes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 50px;
+  width: min(100%, 1080px);
+  margin: 100px auto 0;
+  padding-top: 45px;
+  border-top: 1px solid rgba(185, 148, 92, .35);
+}
+
+.mone-design-notes article {
+  padding-right: 25px;
+}
+
+.mone-design-notes h3 {
+  margin-bottom: 18px;
+  color: var(--mone-cocoa);
+  font-size: 30px;
+}
+
+.mone-design-notes p {
+  margin: 0;
+  color: var(--mone-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* 12. CHAPTER 07 — CLOSING
+========================================================= */
+
+.mone-closing {
+  padding-top: 120px;
+  padding-bottom: 180px;
+  color: var(--mone-ivory);
+  background:
+    radial-gradient(
+      ellipse at 50% 15%,
+      rgba(180, 143, 94, .23),
+      transparent 48%
+    ),
+    linear-gradient(
+      145deg,
+      #49372e,
+      #30241f 75%
+    );
+}
+
+.mone-closing::before {
+  opacity: .18;
+  background-size: 800px auto;
+  mix-blend-mode: screen;
+}
+
+.mone-closing::after {
+  top: 35%;
+  right: -160px;
+  width: 750px;
+  height: 750px;
+  opacity: .17;
+  mix-blend-mode: screen;
+}
+
+.mone-closing .mone-screen {
+  width: min(100%, 1120px);
+  border-color: rgba(255, 255, 255, .13);
+  background: #eae0d3;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, .2);
+}
+
+.mone-closing-content {
+  padding: 120px 8% 0;
+  text-align: center;
+}
+
+.mone-closing-content .mone-eyebrow {
+  color: var(--mone-champagne);
+}
+
+.mone-closing-content h2 {
+  color: var(--mone-white);
+}
+
+.mone-closing-content > p:not(.mone-eyebrow) {
+  max-width: 620px;
+  margin: 30px auto 0;
+  color: rgba(255, 253, 249, .7);
+}
+
+.mone-closing-content .mone-scope-note {
+  max-width: 650px;
+  margin-top: 55px !important;
+  padding-top: 30px;
+  border-top: 1px solid rgba(201, 169, 120, .3);
+  color: rgba(255, 253, 249, .5) !important;
+  font-size: 12px;
+}
+
+/* 13. SUBTLE CHAPTER DIVIDERS
+========================================================= */
+
+.mone-chapter:not(.mone-hero)::before {
+  background-blend-mode: screen;
+}
+
+.mone-chapter + .mone-chapter {
+  border-top: 1px solid rgba(185, 148, 92, .12);
+}
+
+/* 14. RESPONSIVE FOUNDATION
+========================================================= */
+
+@media (max-width: 900px) {
+  .mone-chapter {
+    padding: 110px 6%;
+  }
+
+  .mone-hero {
+    min-height: 760px;
+  }
+
+  .mone-hero .mone-screen {
+    margin-top: 70px;
+  }
+
+  .mone-design-notes {
+    gap: 28px;
+  }
+
+  #chapter-02 .mone-chapter-intro,
+  #chapter-04 .mone-chapter-intro,
+  #chapter-06 .mone-chapter-intro {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .mone-chapter {
+    padding: 90px 22px;
+  }
+
+  .mone-hero {
+    min-height: auto;
+    padding-top: 130px;
+    padding-bottom: 90px;
+  }
+
+  .mone-page h1 {
+    font-size: clamp(66px, 18vw, 100px);
+  }
+
+  .mone-page h2 {
+    font-size: clamp(48px, 13vw, 68px);
+  }
+
+  .mone-page h3 {
+    font-size: 27px;
+  }
+
+  .mone-hero-content {
+    padding: 0;
+  }
+
+  .mone-hero-subtitle {
+    max-width: 320px;
+    font-size: 21px !important;
+  }
+
+  .mone-hero .mone-screen {
+    margin-top: 65px;
+  }
+
+  .mone-screen {
+    margin-top: 50px;
+  }
+
+  .mone-design-notes {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 65px;
+  }
+
+  .mone-design-notes article {
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(185, 148, 92, .25);
+  }
+
+  .mone-closing-content {
+    padding: 90px 0 0;
+  }
+
+  .mone-case-study::after {
+    width: 100%;
+  }
+}
+
+/* 15. REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .mone-page *,
+  .mone-page *::before,
+  .mone-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

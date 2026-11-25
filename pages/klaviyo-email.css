@@ -1,0 +1,1060 @@
+
+/* =========================================================
+   RASAM DIGITAL PORTFOLIO
+   KLAVIYO EMAIL DESIGN — MAIN STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   01. GLOBAL RESET & DESIGN TOKENS
+========================================================= */
+
+:root {
+  --page-bg: #e9e8e3;
+  --surface: #f5f3ee;
+  --text-main: #202421;
+  --text-muted: #777b76;
+  --border: rgba(32, 36, 33, 0.14);
+
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  --m352-bg: #171b1c;
+  --m352-surface: #22292a;
+  --m352-accent: #c8a56b;
+  --m352-text: #f1eee7;
+
+  --aurelle-bg: #e9e0d6;
+  --aurelle-surface: #f5f0e9;
+  --aurelle-accent: #9b806f;
+  --aurelle-text: #453d38;
+
+  --solara-bg: #17445a;
+  --solara-surface: #f2eee5;
+  --solara-accent: #b96e4d;
+  --solara-text: #183c50;
+
+  --content-width: 1180px;
+  --section-space: clamp(80px, 10vw, 150px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.klaviyo-page {
+  background: var(--page-bg);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #bca17a;
+  color: #fff;
+}
+
+
+/* =========================================================
+   02. SHARED TYPOGRAPHY
+========================================================= */
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   03. PAGE INTRODUCTION
+========================================================= */
+
+.email-intro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 680px;
+  padding: 110px 7%;
+  background: #171c1e;
+  color: #f4f0e8;
+  text-align: center;
+  overflow: hidden;
+}
+
+.email-intro::before,
+.email-intro::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(214, 190, 147, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.email-intro::before {
+  top: -240px;
+  left: -160px;
+}
+
+.email-intro::after {
+  right: -180px;
+  bottom: -270px;
+}
+
+.email-intro-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 850px;
+}
+
+.rasam-page-nav {
+  position: absolute;
+  top: 34px;
+  left: 7%;
+  right: 7%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.rasam-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #f4f0e8;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.rasam-brand span {
+  color: #d4a85a;
+  font-family: var(--font-body);
+  font-size: 20px;
+}
+
+.rasam-brand:hover,
+.rasam-brand:focus-visible {
+  color: #d8bd91;
+}
+
+.universe-return {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #d8bd91;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.universe-return span {
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.universe-return:hover,
+.universe-return:focus-visible {
+  color: #fff8ed;
+  transform: translateY(-1px);
+}
+
+.rasam-brand:focus-visible,
+.universe-return:focus-visible,
+.email-back-to-top:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+.email-intro .eyebrow {
+  color: #c7a779;
+  margin-bottom: 35px;
+}
+
+.email-intro h1 {
+  font-size: clamp(52px, 7vw, 92px);
+  letter-spacing: -0.045em;
+  margin-bottom: 30px;
+}
+
+.intro-description {
+  max-width: 570px;
+  margin: 0 auto;
+  color: rgba(244, 240, 232, 0.68);
+  font-size: 15px;
+}
+
+.intro-meta {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-top: 65px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.intro-meta span {
+  color: #c7a779;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+
+/* =========================================================
+   04. SHARED CASE STUDY STRUCTURE
+========================================================= */
+
+.email-case-study {
+  padding: var(--section-space) 7%;
+}
+
+.case-study-header,
+.project-information,
+.design-direction,
+.preview-gallery,
+.case-study-conclusion {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.case-study-index {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.project-category {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.case-study-header h2 {
+  font-size: clamp(48px, 7vw, 82px);
+  letter-spacing: -0.045em;
+  margin-bottom: 12px;
+}
+
+.project-subtitle {
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.project-description {
+  max-width: 670px;
+  font-size: 14px;
+}
+
+.project-information {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 70px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.information-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.info-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.info-value {
+  font-size: 13px;
+}
+
+.design-direction {
+  padding-top: 100px;
+  padding-bottom: 85px;
+  text-align: center;
+}
+
+.design-direction .eyebrow {
+  margin-bottom: 20px;
+}
+
+.design-direction h3 {
+  font-size: clamp(34px, 4.5vw, 55px);
+  margin-bottom: 20px;
+}
+
+.design-direction p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.preview-gallery {
+  margin-bottom: 100px;
+}
+
+.gallery-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gallery-count {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.email-preview {
+  margin-bottom: 38px;
+}
+
+.email-preview img {
+  width: 100%;
+  height: auto;
+  background: #e7e5df;
+}
+
+.email-preview figcaption {
+  padding-top: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mobile-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.mobile-preview-grid .email-preview {
+  margin-bottom: 0;
+}
+
+.mobile-preview-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.case-study-conclusion {
+  padding: 35px 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.case-study-conclusion .eyebrow {
+  margin-bottom: 18px;
+}
+
+.case-study-conclusion p {
+  max-width: 680px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   05. PROJECT 01 — M352 STUDIO
+   Dark / Modern / Structured
+========================================================= */
+
+.m352-case {
+  background: var(--m352-bg);
+  color: var(--m352-text);
+}
+
+.m352-case .eyebrow,
+.m352-case .project-category,
+.m352-case .info-label {
+  color: var(--m352-accent);
+}
+
+.m352-case .project-subtitle {
+  color: #c8bca9;
+}
+
+.m352-case .project-description,
+.m352-case .design-direction p {
+  color: rgba(241, 238, 231, 0.68);
+}
+
+.m352-case .project-information,
+.m352-case .gallery-heading,
+.m352-case .case-study-conclusion {
+  border-color: rgba(241, 238, 231, 0.18);
+}
+
+.m352-case .design-direction h3 {
+  color: #f3e9d8;
+}
+
+.m352-case .email-preview img {
+  background: var(--m352-surface);
+}
+
+.m352-case .email-preview figcaption {
+  color: rgba(241, 238, 231, 0.58);
+}
+
+.m352-case .case-study-conclusion p {
+  color: #e8ddcb;
+}
+
+
+/* =========================================================
+   06. PROJECT 02 — AURELLE WELLNESS
+   Warm / Soft / Refined
+========================================================= */
+
+.aurelle-case {
+  background: var(--aurelle-bg);
+  color: var(--aurelle-text);
+}
+
+.aurelle-case .eyebrow,
+.aurelle-case .project-category,
+.aurelle-case .info-label {
+  color: var(--aurelle-accent);
+}
+
+.aurelle-case .project-subtitle {
+  color: #8f7769;
+}
+
+.aurelle-case .project-description,
+.aurelle-case .design-direction p {
+  color: #74675f;
+}
+
+.aurelle-case .project-information,
+.aurelle-case .gallery-heading,
+.aurelle-case .case-study-conclusion {
+  border-color: rgba(69, 61, 56, 0.18);
+}
+
+.aurelle-case .design-direction h3 {
+  color: #55463d;
+}
+
+.aurelle-case .email-preview img {
+  background: var(--aurelle-surface);
+}
+
+.aurelle-case .email-preview figcaption {
+  color: #8d796b;
+}
+
+.aurelle-case .case-study-conclusion p {
+  color: #55463d;
+}
+
+
+/* =========================================================
+   07. PROJECT 03 — SOLARA BOUTIQUE RESORTS
+   Coastal / Editorial / Spacious
+========================================================= */
+
+.solara-case {
+  background: var(--solara-surface);
+  color: var(--solara-text);
+}
+
+.solara-case .eyebrow,
+.solara-case .project-category,
+.solara-case .info-label {
+  color: var(--solara-accent);
+}
+
+.solara-case .project-subtitle {
+  color: #54788a;
+}
+
+.solara-case .project-description,
+.solara-case .design-direction p {
+  color: #607780;
+}
+
+.solara-case .project-information,
+.solara-case .gallery-heading,
+.solara-case .case-study-conclusion {
+  border-color: rgba(24, 60, 80, 0.18);
+}
+
+.solara-case .design-direction h3 {
+  color: var(--solara-text);
+}
+
+.solara-case .email-preview img {
+  background: #dce5e4;
+}
+
+.solara-case .email-preview figcaption {
+  color: #587887;
+}
+
+.solara-case .case-study-conclusion p {
+  color: var(--solara-text);
+}
+
+
+/* =========================================================
+   08. FINAL PAGE CLOSING
+========================================================= */
+
+.email-closing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 560px;
+  padding: 100px 7%;
+  background: #171c1e;
+  color: #f4f0e8;
+  text-align: center;
+}
+
+.email-closing-inner {
+  max-width: 780px;
+}
+
+.email-closing .eyebrow {
+  color: #c7a779;
+  margin-bottom: 30px;
+}
+
+.email-closing h2 {
+  font-size: clamp(38px, 5.5vw, 68px);
+  letter-spacing: -0.035em;
+  margin-bottom: 25px;
+}
+
+.email-closing p {
+  max-width: 570px;
+  margin: 0 auto;
+  color: rgba(244, 240, 232, 0.68);
+}
+
+.closing-signature {
+  display: inline-block;
+  margin-top: 55px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #c7a779;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+.email-back-to-top {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 28px auto 0;
+  color: #d8bd91;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.email-back-to-top:hover,
+.email-back-to-top:focus-visible {
+  color: #fff8ed;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   09. SUBTLE INTERACTIONS
+========================================================= */
+
+.email-preview img {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.email-preview:hover img {
+  opacity: 0.94;
+}
+
+.case-study-header,
+.design-direction,
+.case-study-conclusion {
+  transition: opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   10. TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .email-intro {
+    min-height: 580px;
+  }
+
+  .email-case-study {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .project-information {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 28px;
+  }
+
+  .mobile-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .design-direction {
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+
+}
+
+
+/* =========================================================
+   11. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  :root {
+    --section-space: 78px;
+  }
+
+  body.klaviyo-page {
+    line-height: 1.65;
+  }
+
+  .email-intro {
+    min-height: 540px;
+    padding: 90px 25px;
+  }
+
+  .rasam-page-nav {
+    top: 22px;
+    left: 25px;
+    right: 25px;
+    gap: 12px;
+  }
+
+  .rasam-brand {
+    font-size: 17px;
+  }
+
+  .rasam-brand span {
+    font-size: 18px;
+  }
+
+  .universe-return {
+    gap: 6px;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .universe-return span {
+    font-size: 12px;
+  }
+
+  .email-intro h1 {
+    font-size: clamp(43px, 12vw, 62px);
+  }
+
+  .intro-description {
+    font-size: 13px;
+  }
+
+  .intro-meta {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 45px;
+  }
+
+  .email-case-study {
+    padding-left: 23px;
+    padding-right: 23px;
+  }
+
+  .case-study-index {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 27px;
+  }
+
+  .case-study-header h2 {
+    font-size: clamp(43px, 11vw, 58px);
+  }
+
+  .project-subtitle {
+    font-size: 18px;
+  }
+
+  .project-description,
+  .design-direction p {
+    font-size: 13px;
+  }
+
+  .project-information {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 15px;
+    margin-top: 45px;
+  }
+
+  .info-value {
+    font-size: 12px;
+  }
+
+  .design-direction {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+
+  .design-direction h3 {
+    font-size: 36px;
+  }
+
+  .preview-gallery {
+    margin-bottom: 70px;
+  }
+
+  .gallery-heading {
+    align-items: flex-start;
+  }
+
+  .gallery-heading .eyebrow {
+    font-size: 9px;
+  }
+
+  .email-preview {
+    margin-bottom: 27px;
+  }
+
+  .email-preview figcaption {
+    font-size: 9px;
+  }
+
+  .mobile-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 14px;
+  }
+
+  .case-study-conclusion {
+    padding-top: 27px;
+  }
+
+  .case-study-conclusion p {
+    font-size: 23px;
+  }
+
+  .email-closing {
+    min-height: 470px;
+    padding: 80px 25px;
+  }
+
+  .email-closing h2 {
+    font-size: 43px;
+  }
+
+  .email-closing p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   12. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .email-case-study {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .mobile-preview-grid {
+    gap: 17px 11px;
+  }
+
+  .case-study-header h2 {
+    font-size: 40px;
+  }
+
+  .design-direction h3 {
+    font-size: 32px;
+  }
+
+}
+
+
+/* =========================================================
+   13. ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+}
+
+/* =========================================================
+   14. CAMPAIGN STRATEGY
+========================================================= */
+
+.campaign-strategy {
+  position: relative;
+  margin: 0 0 72px;
+  padding: 38px 0 42px;
+  border-top: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
+  border-bottom: 1px solid var(--border-color, rgba(128, 128, 128, 0.25));
+}
+
+.campaign-strategy .eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.campaign-strategy h3 {
+  margin: 0 0 12px;
+  font-family: inherit;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.2;
+}
+
+.campaign-strategy .strategy-intro {
+  max-width: 760px;
+  margin-bottom: 34px;
+  font-size: 15px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.campaign-strategy .strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 48px;
+}
+
+.campaign-strategy .strategy-item {
+  min-width: 0;
+}
+
+.campaign-strategy .strategy-item h4 {
+  margin: 0 0 9px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.campaign-strategy .strategy-item p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .campaign-strategy {
+    margin-bottom: 48px;
+    padding: 30px 0;
+  }
+
+  .campaign-strategy .strategy-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .campaign-strategy .strategy-intro {
+    margin-bottom: 26px;
+  }
+}
+
+/* =========================================================
+   15. CAMPAIGN STRATEGY — FULL CENTER ALIGNMENT
+========================================================= */
+
+.campaign-strategy {
+  padding: 56px 0;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.campaign-strategy > .eyebrow {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.campaign-strategy > h3 {
+  max-width: 900px;
+  margin: 0 auto 16px;
+  text-align: center;
+  font-size: clamp(27px, 3vw, 36px);
+  line-height: 1.2;
+}
+
+.campaign-strategy > .strategy-intro {
+  max-width: 680px;
+  margin: 0 auto 44px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.campaign-strategy .strategy-grid {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 64px;
+  row-gap: 32px;
+}
+
+.campaign-strategy .strategy-item {
+  padding-top: 18px;
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+  text-align: center;
+}
+
+.campaign-strategy .strategy-item h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.campaign-strategy .strategy-item p {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .campaign-strategy {
+    padding: 38px 0;
+    margin-bottom: 46px;
+  }
+
+  .campaign-strategy > h3 {
+    font-size: 27px;
+  }
+
+  .campaign-strategy > .strategy-intro {
+    margin-bottom: 30px;
+  }
+
+  .campaign-strategy .strategy-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+} 
+
+/* =========================================================
+   PROJECT HIGHLIGHT — CONSISTENT LEFT ALIGNMENT
+========================================================= */
+
+.case-study-conclusion {
+  text-align: left;
+}
+
+.case-study-conclusion .eyebrow {
+  display: block;
+  text-align: left;
+}
+
+.case-study-conclusion p {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
