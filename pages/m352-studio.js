@@ -19,7 +19,13 @@
     let animationFrame = null;
     let isAnimating = false;
 
-    const STAR_COUNT = 620;
+    const DESKTOP_STAR_COUNT = 620;
+    const MOBILE_STAR_COUNT = 100;
+
+    const getStarCount = () =>
+        window.matchMedia("(max-width: 600px)").matches
+            ? MOBILE_STAR_COUNT
+            : DESKTOP_STAR_COUNT;
 
     const prefersReducedMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)"
@@ -54,7 +60,9 @@
     function createStars() {
         stars = [];
 
-        for (let i = 0; i < STAR_COUNT; i++) {
+        const starCount = getStarCount();
+
+        for (let i = 0; i < starCount; i++) {
             stars.push({
                 x: Math.random() * width,
                 y: Math.random() * height,

@@ -175,10 +175,9 @@ function resizeCanvas() {
 function createStars() {
     stars = [];
 
-    const totalStars = Math.min(
-        420,
-        Math.max(100, Math.round((width * height) / 5200))
-    );
+    const totalStars = window.matchMedia("(max-width: 600px)").matches
+        ? Math.min(150, Math.max(85, Math.round((width * height) / 4200)))
+        : Math.min(420, Math.max(100, Math.round((width * height) / 5200)));
 
     for (let i = 0; i < totalStars; i++) {
         const starType = Math.random();
@@ -521,17 +520,36 @@ universeLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const target = document.querySelector(link.getAttribute("href"));
+    const destination = link.getAttribute("href");
+    const target = destination ? document.querySelector(destination) : null;
 
+    if (!target) {
+      hideUniverse();
+      return;
+    }
+
+    history.pushState(null, "", destination);
     hideUniverse();
 
-    if (target) {
-      history.pushState(null, "", link.getAttribute("href"));
+    const scrollToDestination = () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const targetTop = window.scrollY + target.getBoundingClientRect().top;
 
-      target.scrollIntoView({
-        behavior: prefersReducedMotion ? "auto" : "smooth",
-        block: "start"
+          window.scrollTo({
+            top: targetTop,
+            behavior: prefersReducedMotion ? "auto" : "smooth"
+          });
+        });
       });
+    };
+
+    // On mobile, wait for the directory's 450ms fade/visibility transition
+    // to finish before calculating the destination position and scrolling.
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      window.setTimeout(scrollToDestination, 480);
+    } else {
+      scrollToDestination();
     }
   });
 });
